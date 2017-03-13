@@ -29,7 +29,7 @@ function requestHandler(req, res) {
 
 var io = require('socket.io').listen(httpServer);
 
-io.sockets.on('connection', 
+io.on('connection', 
 
 	function (socket) {
 	
@@ -45,6 +45,10 @@ io.sockets.on('connection',
 
 		socket.on('playerState', function(player) {
 			socket.broadcast.emit('playerUpdate', player);
+		});
+
+		socket.on('ellipseMake', function(data) {
+			socket.broadcast.emit('otherEllipse', data);
 		});
 	}
 );
