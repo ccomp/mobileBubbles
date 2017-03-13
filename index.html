@@ -1,0 +1,44 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <!-- to get rid of favicon request in console -->
+  <link rel="shortcut icon" href="">
+
+  <!-- P5 STUFF -->
+  
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  <script language="javascript" type="text/javascript" src="libraries/p5.collide2d.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- SOCKET STUFF -->
+
+  <script type="text/javascript">
+    
+    /// SOCKET STUFF
+    var socket = io.connect();
+    
+    socket.on('connect', function() {
+      console.log("Connected");
+    });
+
+
+  </script>
+
+  <style> body {padding: 0; margin: 0;}</style>
+</head>
+
+<body>
+    <section>
+        <p id="alpha"></p>
+        <p id="beta"></p>
+        <p id="gamma"></p>
+        <p id="lambda"></p>
+    </section>
+    <div id="canvas"></div>
+</body>
+</html>
+
+
+
